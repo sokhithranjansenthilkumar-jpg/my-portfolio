@@ -6,6 +6,7 @@ import project1Img from './assets/project1.png';
 const ICONS = {
   github: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>`,
   linkedin: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9" rx="1"></rect><circle cx="4" cy="4" r="2"></circle></svg>`,
+  instagram: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>`,
   mail: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>`,
   sun: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`,
   moon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`,
@@ -26,6 +27,7 @@ const PORTFOLIO_DATA = {
   email: 'sokhithranjansenthilkumar@gmail.com',
   github: 'https://github.com/sokhithranjansenthilkumar-jpg',
   linkedin: 'https://www.linkedin.com/in/sokhith-ranjan-s-3a0353327?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  instagram: 'https://www.instagram.com/sokhith_15?igsh=MXNuMGRtaWlzYW03bg==',
   bio: 'I build highly interactive, modern, and responsive web applications. Passionate about learning new technologies and creating sleek user experiences.',
   stats: [
     { value: '3rd Year', label: 'B.Tech IT' },
@@ -84,12 +86,6 @@ app.innerHTML = `
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav-actions">
-        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
-          <span class="sun-icon">${ICONS.sun}</span>
-          <span class="moon-icon" style="display:none;">${ICONS.moon}</span>
-        </button>
-      </div>
     </div>
   </header>
 
@@ -110,6 +106,9 @@ app.innerHTML = `
           </a>
           <a href="${PORTFOLIO_DATA.linkedin}" class="hero-social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             ${ICONS.linkedin}
+          </a>
+          <a href="${PORTFOLIO_DATA.instagram}" class="hero-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            ${ICONS.instagram}
           </a>
         </div>
       </div>
@@ -267,6 +266,12 @@ app.innerHTML = `
         <p>Click a certificate to view the original credential.</p>
       </div>
       <div class="certificates-grid">
+        <button class="certificate-card glass-card infosys-certificate-card" type="button" id="open-infosys-certificates" aria-haspopup="dialog" aria-controls="infosys-certificates-modal">
+          <span class="certificate-icon" aria-hidden="true">🏅</span>
+          <span class="certificate-type">Professional Learning</span>
+          <h3>Infosys Certificates</h3>
+          <span class="certificate-action">View 3 Certificates ${ICONS.externalLink}</span>
+        </button>
         <a class="certificate-card glass-card" href="/certificates/aws-certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Certificate">
           <span class="certificate-icon" aria-hidden="true">☁</span>
           <span class="certificate-type">Cloud Computing</span>
@@ -294,6 +299,24 @@ app.innerHTML = `
       </div>
     </div>
   </section>
+
+  <div class="certificate-modal" id="infosys-certificates-modal" role="dialog" aria-modal="true" aria-labelledby="infosys-modal-title" hidden>
+    <div class="certificate-modal-backdrop" data-close-infosys-modal></div>
+    <div class="certificate-modal-content glass-card">
+      <div class="certificate-modal-header">
+        <div>
+          <p class="certificate-type">Infosys</p>
+          <h2 id="infosys-modal-title">Infosys Certificates</h2>
+        </div>
+        <button class="certificate-modal-close" type="button" aria-label="Close certificates" data-close-infosys-modal>×</button>
+      </div>
+      <div class="infosys-certificates-list">
+        <a href="/certificates/infosys-certificate.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact Section -->
   <section id="contact">
@@ -336,32 +359,9 @@ app.innerHTML = `
           </div>
         </div>
 
-        <form id="contact-form" class="contact-form glass-card">
-          <div class="form-group">
-            <label for="form-name">Name</label>
-            <input type="text" id="form-name" placeholder="Your Name" required />
-          </div>
-          <div class="form-group">
-            <label for="form-email">Email Address</label>
-            <input type="email" id="form-email" placeholder="name@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="form-message">Message</label>
-            <textarea id="form-message" rows="4" placeholder="Write your message here..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">
-            Send Message
-          </button>
-        </form>
       </div>
     </div>
   </section>
-
-  <!-- Success Toast -->
-  <div id="contact-toast" class="toast">
-    <span class="toast-icon">${ICONS.check}</span>
-    <span>Thank you! Your message has been sent successfully.</span>
-  </div>
 
   <!-- Footer -->
   <footer>
@@ -372,6 +372,9 @@ app.innerHTML = `
         </a>
         <a href="${PORTFOLIO_DATA.linkedin}" class="social-link" aria-label="LinkedIn" target="_blank">
           ${ICONS.linkedin}
+        </a>
+        <a href="${PORTFOLIO_DATA.instagram}" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          ${ICONS.instagram}
         </a>
         <a href="mailto:${PORTFOLIO_DATA.email}" class="social-link" aria-label="Email">
           ${ICONS.mail}
@@ -467,38 +470,25 @@ function eraseRole(characterIndex: number) {
 
 typeRole();
 
-// Theme Switcher implementation
-const themeToggle = document.querySelector<HTMLButtonElement>('#theme-toggle')!;
-const sunIcon = themeToggle.querySelector<HTMLSpanElement>('.sun-icon')!;
-const moonIcon = themeToggle.querySelector<HTMLSpanElement>('.moon-icon')!;
+// Infosys certificate gallery
+const infosysModal = document.querySelector<HTMLDivElement>('#infosys-certificates-modal')!;
+const openInfosysCertificates = document.querySelector<HTMLButtonElement>('#open-infosys-certificates')!;
+const closeInfosysModalButtons = infosysModal.querySelectorAll<HTMLElement>('[data-close-infosys-modal]');
 
-// Initialize theme based on localStorage or OS preference
-if (
-  localStorage.getItem('theme') === 'dark' ||
-  (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-) {
-  document.documentElement.classList.add('dark');
-  sunIcon.style.display = 'none';
-  moonIcon.style.display = 'block';
-} else {
-  document.documentElement.classList.remove('dark');
-  sunIcon.style.display = 'block';
-  moonIcon.style.display = 'none';
+function closeInfosysCertificates() {
+  infosysModal.hidden = true;
+  document.body.classList.remove('modal-open');
+  openInfosysCertificates.focus();
 }
 
-themeToggle.addEventListener('click', () => {
-  const isDark = document.documentElement.classList.contains('dark');
-  if (isDark) {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-    sunIcon.style.display = 'block';
-    moonIcon.style.display = 'none';
-  } else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-  }
+openInfosysCertificates.addEventListener('click', () => {
+  infosysModal.hidden = false;
+  document.body.classList.add('modal-open');
+  infosysModal.querySelector<HTMLButtonElement>('.certificate-modal-close')?.focus();
+});
+closeInfosysModalButtons.forEach(button => button.addEventListener('click', closeInfosysCertificates));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !infosysModal.hidden) closeInfosysCertificates();
 });
 
 // Copy Email to clipboard functionality
@@ -516,18 +506,4 @@ copyEmailBtn.addEventListener('click', () => {
       copyEmailBtn.style.borderColor = '';
     }, 2000);
   });
-});
-
-// Contact Form submission handler
-const contactForm = document.querySelector<HTMLFormElement>('#contact-form')!;
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const name = document.querySelector<HTMLInputElement>('#form-name')!.value.trim();
-  const email = document.querySelector<HTMLInputElement>('#form-email')!.value.trim();
-  const message = document.querySelector<HTMLTextAreaElement>('#form-message')!.value.trim();
-  const subject = `Portfolio message from ${name}`;
-  const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
-  window.location.href = `mailto:${PORTFOLIO_DATA.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
