@@ -1407,7 +1407,6 @@ header {
   position: relative;
 }
 
-<<<<<<< HEAD
 .certificate-group-card {
   min-width: 0;
 }
@@ -1461,7 +1460,8 @@ header {
   width: calc(100% + 3.5rem);
   object-fit: cover;
   border-bottom: 1px solid var(--border-color);
-=======
+}
+
 button.certificate-card {
   width: 100%;
   border: 1px solid var(--glass-border);
@@ -1470,7 +1470,6 @@ button.certificate-card {
   font: inherit;
   text-align: left;
   cursor: pointer;
->>>>>>> db188d477db25382ed6d2d670306b94b2b51bfdd
 }
 
 .certificate-card::before {

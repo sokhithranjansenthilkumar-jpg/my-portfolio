@@ -393,7 +393,6 @@ app.innerHTML = `
         <p>Click a certificate to view the original credential.</p>
       </div>
       <div class="certificates-grid">
-<<<<<<< HEAD
         <details class="certificate-group-card">
           <summary class="certificate-card glass-card">
             <span class="certificate-icon" aria-hidden="true">&#128188;</span>
@@ -406,27 +405,12 @@ app.innerHTML = `
             <a href="/certificates/internship-completion-certificate.pdf" target="_blank" rel="noopener noreferrer">VDART Academy ${ICONS.externalLink}</a>
           </div>
         </details>
-        <details class="certificate-group-card">
-          <summary class="certificate-card glass-card">
-            <span class="certificate-icon" aria-hidden="true">&#127891;</span>
-            <span class="certificate-type">Professional Learning</span>
-            <h3>Infosys Certificates</h3>
-            <span class="certificate-action">View 3 Certificates ${ICONS.externalLink}</span>
-          </summary>
-          <div class="internship-certificate-links glass-card">
-            <a href="/certificates/infosys-certificate-1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
-            <a href="/certificates/infosys-certificate-2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
-            <a href="/certificates/infosys-certificate-3.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
-          </div>
-        </details>
-=======
         <button class="certificate-card glass-card infosys-certificate-card" type="button" id="open-infosys-certificates" aria-haspopup="dialog" aria-controls="infosys-certificates-modal">
           <span class="certificate-icon" aria-hidden="true">🏅</span>
           <span class="certificate-type">Professional Learning</span>
           <h3>Infosys Certificates</h3>
           <span class="certificate-action">View 3 Certificates ${ICONS.externalLink}</span>
         </button>
->>>>>>> db188d477db25382ed6d2d670306b94b2b51bfdd
         <a class="certificate-card glass-card" href="/certificates/aws-certificate.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Certificate">
           <span class="certificate-icon" aria-hidden="true">☁</span>
           <span class="certificate-type">Cloud Computing</span>
@@ -466,9 +450,9 @@ app.innerHTML = `
         <button class="certificate-modal-close" type="button" aria-label="Close certificates" data-close-infosys-modal>×</button>
       </div>
       <div class="infosys-certificates-list">
-        <a href="/certificates/infosys-certificate.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
-        <a href="/certificates/infosys-certificate1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
-        <a href="/certificates/infosys-certificate2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate-1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate-2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate-3.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
       </div>
     </div>
   </div>
@@ -578,10 +562,9 @@ function eraseRole(characterIndex: number) {
 
 typeRole();
 
-<<<<<<< HEAD
 // Keep the portfolio in light mode.
 document.documentElement.classList.remove('dark');
-=======
+
 // Infosys certificate gallery
 const infosysModal = document.querySelector<HTMLDivElement>('#infosys-certificates-modal')!;
 const openInfosysCertificates = document.querySelector<HTMLButtonElement>('#open-infosys-certificates')!;
@@ -602,7 +585,6 @@ closeInfosysModalButtons.forEach(button => button.addEventListener('click', clos
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !infosysModal.hidden) closeInfosysCertificates();
 });
->>>>>>> db188d477db25382ed6d2d670306b94b2b51bfdd
 
 // Copy Email to clipboard functionality
 const copyEmailBtn = document.querySelector<HTMLButtonElement>('#copy-email')!;
@@ -620,4 +602,3 @@ copyEmailBtn.addEventListener('click', () => {
     }, 2000);
   });
 });
-//sokhithranjan
