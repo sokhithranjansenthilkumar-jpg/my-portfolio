@@ -450,9 +450,9 @@ app.innerHTML = `
         <button class="certificate-modal-close" type="button" aria-label="Close certificates" data-close-infosys-modal>×</button>
       </div>
       <div class="infosys-certificates-list">
-        <a href="/certificates/infosys-certificate-1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
-        <a href="/certificates/infosys-certificate-2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
-        <a href="/certificates/infosys-certificate-3.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
+        <a href="/certificates/infosys-certificate2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
       </div>
     </div>
   </div>
