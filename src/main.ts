@@ -53,8 +53,8 @@ const PORTFOLIO_DATA = {
       description: 'An automated infrastructure pipeline designed to dynamically autoscale machine learning models and server allocation based on real-time request traffic. Optimizes compute resources and ensures high service availability.',
       image: project1Img,
       tags: ['Python', 'Django', 'Machine Learning', 'Docker', 'Autoscaling'],
-      demoLink: '#',
-      codeLink: '#'
+      demoLink: 'https://autoscaling-project.vercel.app/',
+      codeLink: 'https://github.com/sokhithranjansenthilkumar-jpg/autoscaling_project'
     }
   ]
 };
