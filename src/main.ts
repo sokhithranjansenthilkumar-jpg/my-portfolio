@@ -1,6 +1,8 @@
 import './style.css';
 import profileImg from './assets/profile-suit.jpg';
 import project1Img from './assets/project1.png';
+import vscodeLogo from './assets/vscode.svg';
+import renderLogo from './assets/render.svg';
 
 // Icon SVG Paths helper
 const ICONS = {
@@ -44,8 +46,8 @@ const PORTFOLIO_DATA = {
     { name: 'Django & Python', category: 'backend', level: 50, iconSlug: 'python' },
     // Tools
     { name: 'Git & GitHub', category: 'tools', level: 80, iconSlug: 'git' },
-    { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode' },
-    { name: 'Vercel & Netlify', category: 'tools', level: 55, iconSlug: 'netlify' }
+    { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode', iconSrc: vscodeLogo },
+    { name: 'Vercel & Render', category: 'tools', level: 80, iconSlug: 'render', iconSrc: renderLogo }
   ],
   projects: [
     {
@@ -219,7 +221,7 @@ app.innerHTML = `
           <div class="skills-list">
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'frontend').map(skill => `
               <div class="skill-item-row">
-                <img class="skill-item-logo" src="https://cdn.simpleicons.org/${skill.iconSlug}" alt="${skill.name}" />
+                <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
@@ -240,7 +242,7 @@ app.innerHTML = `
           <div class="skills-list">
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'backend').map(skill => `
               <div class="skill-item-row">
-                <img class="skill-item-logo" src="https://cdn.simpleicons.org/${skill.iconSlug}" alt="${skill.name}" />
+                <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
@@ -261,7 +263,7 @@ app.innerHTML = `
           <div class="skills-list">
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'tools').map(skill => `
               <div class="skill-item-row">
-                <img class="skill-item-logo" src="https://cdn.simpleicons.org/${skill.iconSlug}" alt="${skill.name}" />
+                <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
@@ -393,18 +395,12 @@ app.innerHTML = `
         <p>Click a certificate to view the original credential.</p>
       </div>
       <div class="certificates-grid">
-        <details class="certificate-group-card">
-          <summary class="certificate-card glass-card">
-            <span class="certificate-icon" aria-hidden="true">&#128188;</span>
-            <span class="certificate-type">Internship</span>
-            <h3>Internship Certificates</h3>
-            <span class="certificate-action">View 2 Certificates ${ICONS.externalLink}</span>
-          </summary>
-          <div class="internship-certificate-links glass-card">
-            <a href="/certificates/codec-internship-certificate.pdf" target="_blank" rel="noopener noreferrer">CodeC Technologies ${ICONS.externalLink}</a>
-            <a href="/certificates/internship-completion-certificate.pdf" target="_blank" rel="noopener noreferrer">VDART Academy ${ICONS.externalLink}</a>
-          </div>
-        </details>
+        <button class="certificate-card glass-card" type="button" id="open-internship-certificates" aria-haspopup="dialog" aria-controls="internship-certificates-modal">
+          <span class="certificate-icon" aria-hidden="true">&#128188;</span>
+          <span class="certificate-type">Internship</span>
+          <h3>Internship Certificates</h3>
+          <span class="certificate-action">View 2 Certificates ${ICONS.externalLink}</span>
+        </button>
         <button class="certificate-card glass-card infosys-certificate-card" type="button" id="open-infosys-certificates" aria-haspopup="dialog" aria-controls="infosys-certificates-modal">
           <span class="certificate-icon" aria-hidden="true">🏅</span>
           <span class="certificate-type">Professional Learning</span>
@@ -453,6 +449,23 @@ app.innerHTML = `
         <a href="/certificates/infosys-certificate.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 1 ${ICONS.externalLink}</a>
         <a href="/certificates/infosys-certificate1.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 2 ${ICONS.externalLink}</a>
         <a href="/certificates/infosys-certificate2.pdf" target="_blank" rel="noopener noreferrer">Infosys Certificate 3 ${ICONS.externalLink}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate-modal" id="internship-certificates-modal" role="dialog" aria-modal="true" aria-labelledby="internship-modal-title" hidden>
+    <div class="certificate-modal-backdrop" data-close-internship-modal></div>
+    <div class="certificate-modal-content glass-card">
+      <div class="certificate-modal-header">
+        <div>
+          <p class="certificate-type">Internship</p>
+          <h2 id="internship-modal-title">Internship Certificates</h2>
+        </div>
+        <button class="certificate-modal-close" type="button" aria-label="Close certificates" data-close-internship-modal>×</button>
+      </div>
+      <div class="infosys-certificates-list">
+        <a href="/certificates/codec-internship-certificate.pdf" target="_blank" rel="noopener noreferrer">CodeC Technologies ${ICONS.externalLink}</a>
+        <a href="/certificates/internship-completion-certificate.pdf" target="_blank" rel="noopener noreferrer">VDART Academy ${ICONS.externalLink}</a>
       </div>
     </div>
   </div>
@@ -584,6 +597,27 @@ openInfosysCertificates.addEventListener('click', () => {
 closeInfosysModalButtons.forEach(button => button.addEventListener('click', closeInfosysCertificates));
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !infosysModal.hidden) closeInfosysCertificates();
+});
+
+// Internship certificate gallery
+const internshipModal = document.querySelector<HTMLDivElement>('#internship-certificates-modal')!;
+const openInternshipCertificates = document.querySelector<HTMLButtonElement>('#open-internship-certificates')!;
+const closeInternshipModalButtons = internshipModal.querySelectorAll<HTMLElement>('[data-close-internship-modal]');
+
+function closeInternshipCertificates() {
+  internshipModal.hidden = true;
+  document.body.classList.remove('modal-open');
+  openInternshipCertificates.focus();
+}
+
+openInternshipCertificates.addEventListener('click', () => {
+  internshipModal.hidden = false;
+  document.body.classList.add('modal-open');
+  internshipModal.querySelector<HTMLButtonElement>('.certificate-modal-close')?.focus();
+});
+closeInternshipModalButtons.forEach(button => button.addEventListener('click', closeInternshipCertificates));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !internshipModal.hidden) closeInternshipCertificates();
 });
 
 // Copy Email to clipboard functionality
