@@ -23,7 +23,7 @@ const ICONS = {
 
 // Configurable Portfolio Content
 const PORTFOLIO_DATA = {
-  name: 'Sokhith Ranjan',
+  name: 'Sokhith Ranjan S',
   role: 'Information Technology Student',
   location: 'Chennai, India',
   email: 'sokhithranjansenthilkumar@gmail.com',
@@ -40,21 +40,23 @@ const PORTFOLIO_DATA = {
   skills: [
     // Frontend
     { name: 'HTML & CSS', category: 'frontend', level: 90, iconSlug: 'html5' },
-    { name: 'JavaScript', category: 'frontend', level: 80, iconSlug: 'javascript' },
-    { name: 'React', category: 'frontend', level: 70, iconSlug: 'react' },
+    { name: 'JavaScript', category: 'frontend', level: 85, iconSlug: 'javascript' },
+    { name: 'React.js', category: 'frontend', level: 75, iconSlug: 'react' },
     // Backend
-    { name: 'Django & Python', category: 'backend', level: 50, iconSlug: 'python' },
+    { name: 'Java', category: 'backend', level: 70, iconSlug: 'java', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    { name: 'MySQL', category: 'backend', level: 70, iconSlug: 'mysql' },
     // Tools
-    { name: 'Git & GitHub', category: 'tools', level: 80, iconSlug: 'git' },
+    { name: 'Git & GitHub', category: 'tools', level: 85, iconSlug: 'git' },
     { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode', iconSrc: vscodeLogo },
+    { name: 'Antigravity', category: 'tools', level: 75, iconSlug: 'googlegemini' },
     { name: 'Vercel & Render', category: 'tools', level: 80, iconSlug: 'render', iconSrc: renderLogo }
   ],
   projects: [
     {
-      title: 'Autoscaling in Machine Learning',
-      description: 'An automated infrastructure pipeline designed to dynamically autoscale machine learning models and server allocation based on real-time request traffic. Optimizes compute resources and ensures high service availability.',
+      title: 'Learning-Driven Autoscaling System for Cloud Computing',
+      description: 'An intelligent autoscaling system designed to dynamically scale cloud resources (Scale Up, Scale Down, Stable) based on workload prediction. It leverages machine learning models to analyze CPU usage, traffic patterns, and system load for automated scaling, communicating via Flask-based REST APIs to optimize resource utilization and reduce operational costs.',
       image: project1Img,
-      tags: ['Python', 'Django', 'Machine Learning', 'Docker', 'Autoscaling'],
+      tags: ['Python', 'Machine Learning', 'Flask'],
       demoLink: 'https://autoscaling-project.vercel.app/',
       codeLink: 'https://github.com/sokhithranjansenthilkumar-jpg/autoscaling_project'
     }
@@ -326,60 +328,38 @@ app.innerHTML = `
         <details class="experience-card glass-card">
           <summary>
             <div>
-              <h3>Full Stack Developer Intern</h3>
+              <h3>Full Stack Intern</h3>
               <p class="experience-company">VDart Academy, Trichy</p>
             </div>
             <div class="experience-meta">
-              <span>July 2026</span>
+              <span>Jul 2026</span>
               <span class="experience-toggle" aria-hidden="true">+</span>
             </div>
           </summary>
           <div class="experience-details">
             <ul>
-              <li>Completed HTML fundamentals.</li>
-              <li>Learned CSS for responsive web design and styling.</li>
-              <li>Studied JavaScript for interactive web applications.</li>
-              <li>Gained knowledge of full-stack web development.</li>
-              <li>Built hands-on web development projects.</li>
-              <li>Learned frontend and backend development concepts.</li>
-              <li>Improved problem-solving and debugging skills.</li>
-              <li>Trained at VDART Academy with practical project experience.</li>
+              <li>Completed an Academic Internship (On-the-Job Training) in Full Stack development at VDart Academy, from 6th July 2026 to 20th July 2026.</li>
+              <li>Showcased a strong skill set and a drive to learn, working under mentorship and in collaboration with peers.</li>
+              <li>Successfully completed the training within the expected timeframe, exceeding program expectations.</li>
             </ul>
           </div>
         </details>
         <details class="experience-card glass-card">
           <summary>
             <div>
-              <h3>Python Developer Intern</h3>
-              <p class="experience-company">CodeC Technologies</p>
+              <h3>Intern</h3>
+              <p class="experience-company">Codec Technologies Pvt. Ltd.</p>
             </div>
             <div class="experience-meta">
-              <span>Jul 2025</span>
+              <span>July 2025</span>
               <span class="experience-toggle" aria-hidden="true">+</span>
             </div>
           </summary>
           <div class="experience-details">
-            <div class="internship-timeline" aria-label="Python Developer internship timeline">
-              <div class="timeline-entry">
-                <time datetime="2025-07-01">01 Jul 2025</time>
-                <p>Started the Python Developer internship at CodeC Technologies.</p>
-              </div>
-              <div class="timeline-entry">
-                <time datetime="2025-07-02">Jul 2025</time>
-                <p>Practiced Python programming, object-oriented concepts, and small development exercises.</p>
-              </div>
-              <div class="timeline-entry">
-                <time datetime="2025-07-25">25 Jul 2025</time>
-                <p>Completed the one-month internship program.</p>
-              </div>
-            </div>
             <ul>
-              <li>Learned Python fundamentals, including variables, data types, operators, and control flow.</li>
-              <li>Worked with functions, modules, lists, dictionaries, tuples, and file handling.</li>
-              <li>Practiced object-oriented programming concepts such as classes and inheritance.</li>
-              <li>Built small Python programs to strengthen logical thinking and problem-solving skills.</li>
-              <li>Learned debugging techniques and wrote clean, readable Python code.</li>
-              <li>Gained practical exposure to the Python development workflow during the internship.</li>
+              <li>Completed AICTE & ICAC approved internship program.</li>
+              <li>Gained hands-on experience in industry practices and project execution.</li>
+              <li>Successfully delivered assigned tasks and contributed to team goals.</li>
             </ul>
           </div>
         </details>
