@@ -49,7 +49,9 @@ const PORTFOLIO_DATA = {
     { name: 'Git & GitHub', category: 'tools', level: 85, iconSlug: 'git' },
     { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode', iconSrc: vscodeLogo },
     { name: 'Antigravity', category: 'tools', level: 75, iconSlug: 'googlegemini' },
-    { name: 'Vercel & Render', category: 'tools', level: 80, iconSlug: 'render', iconSrc: renderLogo }
+    { name: 'Vercel & Render', category: 'tools', level: 80, iconSlug: 'render', iconSrc: renderLogo },
+    // Technical
+    { name: 'MATLAB', category: 'technical', level: 50, iconSlug: 'matlab', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg' }
   ],
   projects: [
     {
@@ -264,6 +266,27 @@ app.innerHTML = `
           <h3 class="skills-column-title">Tools &amp; Others</h3>
           <div class="skills-list">
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'tools').map(skill => `
+              <div class="skill-item-row">
+                <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
+                <div class="skill-item-info">
+                  <div class="skill-item-header">
+                    <span class="skill-item-name">${skill.name}</span>
+                    <span class="skill-item-percentage">${skill.level}%</span>
+                  </div>
+                  <div class="skill-item-bar">
+                    <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Technical Column -->
+        <div class="skills-column-card glass-card">
+          <h3 class="skills-column-title">Technical</h3>
+          <div class="skills-list">
+            ${PORTFOLIO_DATA.skills.filter(s => s.category === 'technical').map(skill => `
               <div class="skill-item-row">
                 <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
                 <div class="skill-item-info">
