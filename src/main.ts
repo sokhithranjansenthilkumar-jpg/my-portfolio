@@ -48,7 +48,7 @@ const PORTFOLIO_DATA = {
     // Tools
     { name: 'Git & GitHub', category: 'tools', level: 85, iconSlug: 'git' },
     { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode', iconSrc: vscodeLogo },
-    { name: 'Antigravity', category: 'tools', level: 75, iconSlug: 'googlegemini' },
+    { name: 'Antigravity', category: 'tools', level: 80, iconSlug: 'googlegemini' },
     { name: 'Vercel & Render', category: 'tools', level: 80, iconSlug: 'render', iconSrc: renderLogo },
     // Technical
     { name: 'MATLAB', category: 'technical', level: 50, iconSlug: 'matlab', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg' }
