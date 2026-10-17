@@ -982,10 +982,10 @@ header {
   transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Four-column skill progress layout */
+/* Three-column skill progress layout */
 .skills-columns-container {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   align-items: stretch;
 }

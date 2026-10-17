@@ -42,9 +42,6 @@ const PORTFOLIO_DATA = {
     { name: 'HTML & CSS', category: 'frontend', level: 90, iconSlug: 'html5' },
     { name: 'JavaScript', category: 'frontend', level: 85, iconSlug: 'javascript' },
     { name: 'React.js', category: 'frontend', level: 75, iconSlug: 'react' },
-    // Backend
-    { name: 'Java', category: 'backend', level: 70, iconSlug: 'java', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-    { name: 'MySQL', category: 'backend', level: 70, iconSlug: 'mysql' },
     // Tools
     { name: 'Git & GitHub', category: 'tools', level: 85, iconSlug: 'git' },
     { name: 'VS Code & CLI', category: 'tools', level: 80, iconSlug: 'visualstudiocode', iconSrc: vscodeLogo },
@@ -138,11 +135,6 @@ app.innerHTML = `
           <p>I am a passionate computer science student with a strong foundation in modern web technologies. My journey in tech started with a curiosity about how things work on the internet, which quickly escalated into a deep dive into frontend and full-stack development. I enjoy building pixel-perfect, engaging, and accessible digital experiences.</p>
           <div class="about-highlights">
             <article class="about-highlight-card glass-card">
-              <div class="about-highlight-icon">${ICONS.briefcase}</div>
-              <h3>Experience</h3>
-              <p>3+ Years coding</p>
-            </article>
-            <article class="about-highlight-card glass-card">
               <div class="about-highlight-icon">${ICONS.code}</div>
               <h3>Education</h3>
               <p>B.Tech</p>
@@ -229,28 +221,6 @@ app.innerHTML = `
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
-                    <span class="skill-item-percentage">${skill.level}%</span>
-                  </div>
-                  <div class="skill-item-bar">
-                    <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- Backend Column -->
-        <div class="skills-column-card glass-card">
-          <h3 class="skills-column-title">Backend &amp; DB</h3>
-          <div class="skills-list">
-            ${PORTFOLIO_DATA.skills.filter(s => s.category === 'backend').map(skill => `
-              <div class="skill-item-row">
-                <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
-                <div class="skill-item-info">
-                  <div class="skill-item-header">
-                    <span class="skill-item-name">${skill.name}</span>
-                    <span class="skill-item-percentage">${skill.level}%</span>
                   </div>
                   <div class="skill-item-bar">
                     <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
@@ -271,7 +241,6 @@ app.innerHTML = `
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
-                    <span class="skill-item-percentage">${skill.level}%</span>
                   </div>
                   <div class="skill-item-bar">
                     <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
@@ -292,7 +261,6 @@ app.innerHTML = `
                 <div class="skill-item-info">
                   <div class="skill-item-header">
                     <span class="skill-item-name">${skill.name}</span>
-                    <span class="skill-item-percentage">${skill.level}%</span>
                   </div>
                   <div class="skill-item-bar">
                     <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
