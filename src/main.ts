@@ -218,14 +218,7 @@ app.innerHTML = `
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'frontend').map(skill => `
               <div class="skill-item-row">
                 <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
-                <div class="skill-item-info">
-                  <div class="skill-item-header">
-                    <span class="skill-item-name">${skill.name}</span>
-                  </div>
-                  <div class="skill-item-bar">
-                    <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
-                  </div>
-                </div>
+                <span class="skill-item-name">${skill.name}</span>
               </div>
             `).join('')}
           </div>
@@ -238,14 +231,7 @@ app.innerHTML = `
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'tools').map(skill => `
               <div class="skill-item-row">
                 <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
-                <div class="skill-item-info">
-                  <div class="skill-item-header">
-                    <span class="skill-item-name">${skill.name}</span>
-                  </div>
-                  <div class="skill-item-bar">
-                    <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
-                  </div>
-                </div>
+                <span class="skill-item-name">${skill.name}</span>
               </div>
             `).join('')}
           </div>
@@ -258,14 +244,7 @@ app.innerHTML = `
             ${PORTFOLIO_DATA.skills.filter(s => s.category === 'technical').map(skill => `
               <div class="skill-item-row">
                 <img class="skill-item-logo" src="${skill.iconSrc ?? `https://cdn.simpleicons.org/${skill.iconSlug}`}" alt="${skill.name}" />
-                <div class="skill-item-info">
-                  <div class="skill-item-header">
-                    <span class="skill-item-name">${skill.name}</span>
-                  </div>
-                  <div class="skill-item-bar">
-                    <div class="skill-item-progress" data-level="${skill.level}" style="width: 0%;"></div>
-                  </div>
-                </div>
+                <span class="skill-item-name">${skill.name}</span>
               </div>
             `).join('')}
           </div>
@@ -508,14 +487,7 @@ app.innerHTML = `
   </footer>
 `;
 
-// Animate all skill progress bars on load
-setTimeout(() => {
-  const bars = document.querySelectorAll<HTMLDivElement>('.skill-item-progress');
-  bars.forEach(bar => {
-    const level = bar.getAttribute('data-level');
-    bar.style.width = `${level}%`;
-  });
-}, 300);
+
 
 // Type each role, hold it for three seconds, then move to the next role.
 const typedRole = document.querySelector<HTMLSpanElement>('#typed-role')!;
